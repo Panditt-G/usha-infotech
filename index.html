@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usha Infotech — IT That Just Works</title>
+    <meta
+      name="description"
+      content="25 Years of IT Solutions. CCTV, Infrastructure, Rentals, AMC. Blue-Teal Enterprise Solutions."
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+
+  <body>
+    <div class="scroll-progress"></div>
+    <div class="bg-glow-wrapper">
+      <div class="glow-ball glow-1"></div>
+      <div class="glow-ball glow-2"></div>
+      <div class="glow-ball glow-3"></div>
+    </div>
+
+    <!-- TOP INFO BAR -->
+    <div class="top-bar">
+      <div class="container top-inner">
+        <span>Pan-India & International Service Delivery · Since 1999</span>
+        <span>info@ushainfotech.in · +91 XXXXX XXXXX</span>
+      </div>
+    </div>
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <div class="logo">
+          <img
+            src="assets/logo.png"
+            alt="Usha Infotech Logo"
+            class="logo-icon"
+          />
+          <span class="logo-text">
+            <span class="logo-gradient">Usha</span> Infotech
+          </span>
+        </div>
+        <nav>
+          <a href="#services">SERVICES</a>
+          <a href="#trust">REFURBISHED</a>
+          <a href="#process">RENTALS</a>
+          <a href="#contact">ABOUT</a>
+        </nav>
+        <button class="btn-primary">Contact Us</button>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Trusted across India · Since 1999
+        </div>
+        <h1 class="hero-heading">
+          25 Years of IT that <br />
+          <span class="gradient-text italic">just works.</span>
+        </h1>
+
+        <p>
+          CCTV. Laptops. Infrastructure. Rentals. AMC. One trusted team
+          delivering scalable enterprise solutions.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="btn-primary">Explore Services</button>
+          <button class="btn-outline">Our Story</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat-card">
+            <h2 class="counter" data-target="25">0</h2>
+            <p>Years Experience</p>
+          </div>
+          <div class="stat-card">
+            <h2 class="counter" data-target="500">0</h2>
+            <p>Enterprise Clients</p>
+          </div>
+          <div class="stat-card">
+            <h2 class="counter" data-target="5000">0</h2>
+            <p>Deployments</p>
+          </div>
+          <div class="stat-card">
+            <h2 class="counter" data-target="15">0</h2>
+            <p>States Served</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- service card-->
+
+    <section class="service-section">
+      <div class="ticker-wrap">
+        <div class="ticker-track" id="ticker"></div>
+      </div>
+
+      <div class="section-header">
+        <p class="section-label">Our Expertise</p>
+        <h2 class="section-title">Service Showcase</h2>
+        <div class="title-underline"></div>
+      </div>
+
+      <div class="carousel-wrapper">
+        <div class="cards-track" id="cardsTrack"></div>
+      </div>
+
+      <div class="dots" id="dots"></div>
+
+      <p class="bottom-text">
+        From business infrastructure to personal devices — everything under one
+        roof.
+      </p>
+    </section>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal-box" id="modalBox">
+        <button class="modal-close" id="modalClose">✕</button>
+        <span class="modal-tag" id="modalTag"></span>
+        <h3 class="modal-title" id="modalTitle"></h3>
+        <p class="modal-desc" id="modalDesc"></p>
+        <ul class="modal-features" id="modalFeatures"></ul>
+        <button class="modal-cta">Get a Quote</button>
+      </div>
+    </div>
+
+    <!-- trust section -->
+
+    <section class="trust-section">
+      <div class="container trust-grid">
+        <!-- LEFT CONTENT -->
+
+        <div class="trust-content">
+          <h2 class="trust-title">
+            Why Enterprises Trust <span>Usha Infotech</span>
+          </h2>
+
+          <div class="trust-items">
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+
+              <div>
+                <h4>Proven Track Record</h4>
+                <p>
+                  Over two decades of excellence in the IT industry since 1999.
+                </p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+
+              <div>
+                <h4>OEM Partnership</h4>
+                <p>
+                  Authorized partners for major hardware and software vendors
+                  globally.
+                </p>
+              </div>
+            </div>
+
+            <div class="trust-item">
+              <div class="trust-icon">✓</div>
+
+              <div>
+                <h4>Scalable Solutions</h4>
+                <p>
+                  From small office setups to pan-India corporate deployments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT IMAGE -->
+
+        <div class="trust-image-wrapper">
+          <img src="assets/server.jpg" class="trust-image" />
+
+          <div class="support-card">
+            <h3>24/7</h3>
+            <p>SUPPORT AVAILABILITY</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- process section -->
+
+    <section class="process-section">
+      <div class="container">
+        <h2 class="process-title">How We Work</h2>
+
+        <div class="process-wrapper">
+          <div class="process-line"></div>
+
+          <div class="process-grid">
+            <div class="process-item">
+              <div class="process-icon">💬</div>
+              <h3>1. Consult</h3>
+              <p>
+                We analyze your specific IT requirements and business goals.
+              </p>
+            </div>
+
+            <div class="process-item">
+              <div class="process-icon">📦</div>
+              <h3>2. Supply</h3>
+              <p>
+                We source and deploy high-quality hardware and software
+                solutions.
+              </p>
+            </div>
+
+            <div class="process-item">
+              <div class="process-icon">🎧</div>
+              <h3>3. Support</h3>
+              <p>
+                Ongoing maintenance and technical assistance whenever you need
+                it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- testimonial -->
+
+    <section class="testimonials-section">
+      <div class="container">
+        <h2 class="testimonials-title">What Clients Say</h2>
+
+        <div class="testimonials-grid">
+          <!-- CARD 1 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+
+            <p class="testimonial-text">
+              "Usha Infotech has been our trusted IT partner for over a decade.
+              Their turnaround time on hardware supply is unmatched."
+            </p>
+
+            <div class="client">
+              <img src="assets/client1.jpg" alt="Rajesh Khanna" />
+
+              <div>
+                <h4>Rajesh Khanna</h4>
+                <span>CTO, VERTEX LOGISTICS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+
+            <p class="testimonial-text">
+              "Excellent service for laptop rentals. The machines provided were
+              top-notch and in perfect working condition."
+            </p>
+
+            <div class="client">
+              <img src="assets/client2.jpg" alt="Anjali Mehta" />
+
+              <div>
+                <h4>Anjali Mehta</h4>
+                <span>HR HEAD, CLOUDSTREAM</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="testimonial-card">
+            <div class="stars">★★★★★</div>
+
+            <p class="testimonial-text">
+              "Their GeM registration made it incredibly easy for our government
+              department to procure quality hardware."
+            </p>
+
+            <div class="client">
+              <img src="assets/client3.jpg" alt="Amit Shinde" />
+
+              <div>
+                <h4>Amit Shinde</h4>
+                <span>DIRECTOR, MUNICIPAL CORP</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- stroy time-->
+
+    <section class="story-section">
+      <div class="container story-grid">
+        <!-- LEFT FOUNDERS -->
+
+        <div class="story-founders">
+          <div class="founder-card">
+            <img src="assets/SameerAgarwal.jpeg" alt="Sameer Agarwal" />
+
+            <h4>Sameer Agarwal</h4>
+            <span>FOUNDER & MD</span>
+          </div>
+
+          <div class="founder-card">
+            <img src="assets/EktaAgarwal.jpeg" alt="Ekta Agarwal" />
+
+            <h4>Ekta Agarwal</h4>
+            <span>CO-FOUNDER & DIRECTOR</span>
+          </div>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+
+        <div class="story-content">
+          <p class="story-label">OUR STORY</p>
+
+          <h2 class="story-title">
+            Built on one promise <br />
+            since 1999.
+          </h2>
+
+          <p class="story-text">
+            What started as a small computer shop in Nashik has grown into a
+            leading pan-India IT solutions provider. For over 25 years, our
+            journey has been defined by a relentless focus on reliability and
+            customer-first service.
+          </p>
+
+          <div class="story-quote">
+            <p>
+              "We don't just install technology. We make sure it works on the
+              day you need it most."
+            </p>
+
+            <span>— Sameer Agarwal, Founder</span>
+          </div>
+
+          <p class="story-small">
+            Today, we manage IT infrastructure for over 500+ global enterprises,
+            ensuring their business stays connected, secure, and ready for the
+            future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="bg-rings">
+        <div class="ring ring-1"></div>
+        <div class="ring ring-2"></div>
+      </div>
+
+      <div class="cta-inner">
+        <h1 class="cta-title">Let's switch you on.</h1>
+
+        <p class="cta-sub">
+          Call, WhatsApp, or email us. Pan-India and international enquiries
+          welcome.
+        </p>
+
+        <div class="cta-buttons">
+          <a href="tel:+919876543210" class="btn btn-dark"> Call Now </a>
+
+          <a href="https://wa.me/919876543210" class="btn btn-outline">
+            WhatsApp Us
+          </a>
+        </div>
+
+        <div class="cta-footer">
+          <div class="contact-item">
+            <span>INFO@USHAINFOTECH.IN</span>
+            <span class="dot">•</span>
+          </div>
+
+          <div class="contact-item">
+            <span>NASHIK HQ</span>
+            <span class="cta-dot">•</span>
+          </div>
+
+          <div class="contact-item">
+            <span>PAN-INDIA</span>
+            <span class="dot">•</span>
+          </div>
+
+          <div class="contact-item">
+            <span>INTERNATIONAL</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <!-- Brand -->
+          <div class="brand-col">
+            <div class="logo-row">
+              <div class="logo-text">Usha<br />Infotech</div>
+            </div>
+
+            <p class="brand-desc">
+              Nashik's leading IT solutions provider with a national reach. 25
+              years of excellence in infrastructure and managed support.
+            </p>
+
+            <div class="social-icons">
+              <a href="#">in</a>
+              <a href="#">x</a>
+              <a href="#">fb</a>
+              <a href="#">ig</a>
+            </div>
+          </div>
+
+          <!-- Services -->
+          <div class="links-col">
+            <h3 class="col-heading">Services</h3>
+            <nav>
+              <a href="#">IT Infrastructure</a>
+              <a href="#">Corporate Supply</a>
+              <a href="#">CCTV Surveillance</a>
+              <a href="#">Refurbished Gear</a>
+              <a href="#">Networking</a>
+            </nav>
+          </div>
+
+          <!-- Company -->
+          <div class="links-col">
+            <h3 class="col-heading">Company</h3>
+            <nav>
+              <a href="#">About Us</a>
+              <a href="#">Our Process</a>
+              <a href="#">Clients</a>
+              <a href="#">Contact</a>
+            </nav>
+          </div>
+
+          <!-- Contact -->
+          <div class="contact-col">
+            <h3 class="col-heading">Contact Info</h3>
+
+            <div class="contact-list">
+              <p>Plot 45, IT Park Area,<br />Nashik, MH 422001</p>
+              <p>+91 98765 43210</p>
+              <p>contact@ushainfotech.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2024 USHA INFOTECH. ALL RIGHTS RESERVED.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+  </body>
+</html>
