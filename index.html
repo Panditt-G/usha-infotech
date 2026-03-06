@@ -15,6 +15,7 @@
     />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="icon" type="image/png" href="assets/logo.png">
   </head>
 
   <body>
@@ -28,7 +29,7 @@
     <!-- TOP INFO BAR -->
     <div class="top-bar">
       <div class="container top-inner">
-        <span>Pan-India & International Service Delivery · Since 1999</span>
+        <span>Pan-India · Since 1999</span>
         <span>info@ushainfotech.in · +91 XXXXX XXXXX</span>
       </div>
     </div>
@@ -51,9 +52,26 @@
           <a href="#process">RENTALS</a>
           <a href="#contact">ABOUT</a>
         </nav>
-        <button class="btn-primary">Contact Us</button>
-      </div>
+<button class="btn-primary nav-cta">
+  <span class="btn-text">Contact Us</span>
+  <span class="btn-icon">📞</span>
+</button>
+<button class="hamburger" id="hamburger" aria-label="Open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>    
+  </div>
     </header>
+
+    <!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#trust"    onclick="closeMobileNav()">Refurbished</a>
+  <a href="#process"  onclick="closeMobileNav()">Rentals</a>
+  <a href="#story"    onclick="closeMobileNav()">About</a>
+  <button class="mobile-cta" onclick="closeMobileNav()">Contact Us</button>
+</div>
 
     <!-- HERO -->
     <section class="hero">
@@ -74,8 +92,7 @@
 
         <div class="hero-buttons">
           <button class="btn-primary">Explore Services</button>
-          <button class="btn-outline">Our Story</button>
-        </div>
+          <a href="#story" class="btn-outline">Our Story</a>        </div>
 
         <div class="stats">
           <div class="stat-card">
@@ -112,8 +129,14 @@
       </div>
 
       <div class="carousel-wrapper">
-        <div class="cards-track" id="cardsTrack"></div>
-      </div>
+
+  <button class="carousel-btn left-btn">❮</button>
+
+  <div class="cards-track" id="cardsTrack"></div>
+
+  <button class="carousel-btn right-btn">❯</button>
+
+</div>
 
       <div class="dots" id="dots"></div>
 
@@ -123,18 +146,32 @@
       </p>
     </section>
 
-    <!-- MODAL -->
-    <div class="modal-overlay" id="modalOverlay">
-      <div class="modal-box" id="modalBox">
-        <button class="modal-close" id="modalClose">✕</button>
+    <!-- MODAL pop up -->
+   <div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+
+    <button class="modal-close" id="modalClose">✕</button>
+
+    <div class="modal-header">
+      <div class="modal-shape" id="modalShape"></div>
+
+      <div>
         <span class="modal-tag" id="modalTag"></span>
         <h3 class="modal-title" id="modalTitle"></h3>
-        <p class="modal-desc" id="modalDesc"></p>
-        <ul class="modal-features" id="modalFeatures"></ul>
-        <button class="modal-cta">Get a Quote</button>
       </div>
     </div>
 
+    <p class="modal-desc" id="modalDesc"></p>
+
+    <ul class="modal-features" id="modalFeatures"></ul>
+
+    <div class="modal-actions">
+      <button class="modal-cta">Get a Quote</button>
+      <button class="modal-secondary">Contact Sales</button>
+    </div>
+
+  </div>
+</div>
     <!-- trust section -->
 
     <section class="trust-section">
@@ -253,7 +290,7 @@
             </p>
 
             <div class="client">
-              <img src="assets/client1.jpg" alt="Rajesh Khanna" />
+              <img src="assets/IT.png" alt="Rajesh Khanna" />
 
               <div>
                 <h4>Rajesh Khanna</h4>
@@ -272,7 +309,7 @@
             </p>
 
             <div class="client">
-              <img src="assets/client2.jpg" alt="Anjali Mehta" />
+              <img src="assets/IT.png" alt="Anjali Mehta" />
 
               <div>
                 <h4>Anjali Mehta</h4>
@@ -291,7 +328,7 @@
             </p>
 
             <div class="client">
-              <img src="assets/client3.jpg" alt="Amit Shinde" />
+              <img src="assets/IT.png" alt="Amit Shinde" />
 
               <div>
                 <h4>Amit Shinde</h4>
@@ -305,7 +342,7 @@
 
     <!-- stroy time-->
 
-    <section class="story-section">
+    <section class="story-section" id="story">
       <div class="container story-grid">
         <!-- LEFT FOUNDERS -->
 
@@ -327,38 +364,48 @@
 
         <!-- RIGHT CONTENT -->
 
-        <div class="story-content">
-          <p class="story-label">OUR STORY</p>
+        <div class="story-timeline">
 
-          <h2 class="story-title">
-            Built on one promise <br />
-            since 1999.
-          </h2>
+  <div class="timeline-dot"></div>
 
-          <p class="story-text">
-            What started as a small computer shop in Nashik has grown into a
-            leading pan-India IT solutions provider. For over 25 years, our
-            journey has been defined by a relentless focus on reliability and
-            customer-first service.
-          </p>
+ 
 
-          <div class="story-quote">
-            <p>
-              "We don't just install technology. We make sure it works on the
-              day you need it most."
-            </p>
-
-            <span>— Sameer Agarwal, Founder</span>
-          </div>
-
-          <p class="story-small">
-            Today, we manage IT infrastructure for over 500+ global enterprises,
-            ensuring their business stays connected, secure, and ready for the
-            future.
-          </p>
-        </div>
-      </div>
-    </section>
+  
+  <div class="story-content">
+    <p class="story-label">OUR STORY</p>
+    
+    <h2 class="story-title">
+      Built on one promise <br />
+      since 1999.
+    </h2>
+    
+    <p class="story-text">
+      What started as a small computer shop in Nashik has grown into a
+      leading pan-India IT solutions provider. For over 25 years, our
+      journey has been defined by a relentless focus on reliability and
+      customer-first service.
+    </p>
+    
+    <div class="story-quote">
+      <p>
+        "We don't just install technology. We make sure it works on the
+        day you need it most."
+      </p>
+      
+      <span>— Sameer Agarwal, Founder</span>
+    </div>
+    
+    <p class="story-small">
+      Today, we manage IT infrastructure for over 500+ global enterprises,
+      ensuring their business stays connected, secure, and ready for the
+      future.
+    </p>
+  </div>
+  <div class="timeline-dot bottom"></div>
+  
+  </div>
+</div>
+</section>
 
     <!-- CTA -->
     <section class="cta-section">
@@ -423,10 +470,10 @@
             </p>
 
             <div class="social-icons">
-              <a href="#">in</a>
-              <a href="#">x</a>
-              <a href="#">fb</a>
-              <a href="#">ig</a>
+              <a href="https://www.instagram.com/usha_infotech/?hl=en">in</a>
+              <a href="https://www.instagram.com/usha_infotech/?hl=en">x</a>
+              <a href="https://www.instagram.com/usha_infotech/?hl=en">fb</a>
+              <a href="https://www.instagram.com/usha_infotech/?hl=en">ig</a>
             </div>
           </div>
 
@@ -477,5 +524,11 @@
 
     <script src="js/main.js"></script>
     <script src="js/animations.js"></script>
+
+    <div class="float-bar">
+  <a href="tel:+919876543210" class="float-btn float-call">
+     Call Us
+  </a>
+</div>
   </body>
 </html>

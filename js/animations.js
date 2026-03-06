@@ -75,11 +75,12 @@ gsap.fromTo(
   {
     scaleX: 1,
     ease: "none",
+    duration: 1.5,
     transformOrigin: "left center",
     scrollTrigger: {
       trigger: ".process-section",
-      start: "top 60%",
-      end: "bottom 90%",
+      start: "top 40%",
+      end: "bottom 100%",
       scrub: true
     }
   }
@@ -100,7 +101,7 @@ gsap.fromTo(
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: ".process-section",
-    start: "top 140%",
+    start: "top 130%",
     end: "bottom 60%",
     scrub: 1,
   },
@@ -113,7 +114,7 @@ tl.to(".process-line::after", {
 
 tl.from(".process-item", {
   y: 40,
-  opacity: 1,
+  opacity: 0.6,
   stagger: 0.3,
   duration: 1,
 });
@@ -130,3 +131,4 @@ gsap.from(".testimonial-card", {
     start: "top 80%",
   },
 });
+

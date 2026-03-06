@@ -112,6 +112,7 @@ const services = [
   {
     tag: "Hardware",
     title: "Premium Hardware Supply",
+    image: "assets/Supply.png", 
     short:
       "Authorised procurement from global giants like Dell, HP, and Lenovo with full enterprise warranty.",
     desc: "We source and supply enterprise-grade hardware from globally authorised distributors. Every device is GEM-registered, warranty-backed, and delivered with full OEM support.",
@@ -131,6 +132,7 @@ const services = [
   {
     tag: "Surveillance",
     title: "CCTV & Surveillance Systems",
+    image: "assets/CCTV.png", 
     short:
       "End-to-end CCTV installation for offices, warehouses and campuses. 24/7 monitoring support.",
     desc: "Complete IP and analog CCTV solutions designed for enterprise environments. From site survey to installation and AMC, we handle it all with certified technicians.",
@@ -149,6 +151,7 @@ const services = [
   {
     tag: "Networking",
     title: "Enterprise Networking",
+    image: "assets/Enterprise.png",
     short:
       "Structured cabling, Wi-Fi deployments and firewall setup for seamless connectivity.",
     desc: "We design and deploy robust network infrastructure — from structured LAN/WAN cabling to enterprise Wi-Fi, routers, switches, and next-gen firewalls.",
@@ -167,6 +170,7 @@ const services = [
   {
     tag: "Rentals",
     title: "IT Equipment Rentals",
+    image: "assets/IT.png",
     short:
       "Short and long-term laptop, desktop and AV equipment rentals for events and enterprises.",
     desc: "Flexible rental plans for laptops, desktops, projectors, and complete IT setups. Ideal for events, short-term projects, and scaling teams without CAPEX.",
@@ -208,6 +212,37 @@ track.innerHTML = items;
 let current = 0;
 const total = services.length;
 
+const nextBtn = document.querySelector(".right-btn")
+const prevBtn = document.querySelector(".left-btn")
+
+function clickAnim(btn){
+  gsap.fromTo(
+    btn,
+    { scale: 1 },
+    { scale: 0.8, duration: 0.1, yoyo: true, repeat: 1, ease: "power1.out" }
+  )
+}
+
+nextBtn.addEventListener("click", () => {
+
+  clickAnim(nextBtn)
+
+  current = (current + 1) % total
+  renderCarousel()
+  renderDots()
+
+})
+
+prevBtn.addEventListener("click", () => {
+
+  clickAnim(prevBtn)
+
+  current = (current - 1 + total) % total
+  renderCarousel()
+  renderDots()
+
+})
+
 function getRelativeIndex(i) {
   // returns position relative to current: -1, 0, 1, others hidden
   let diff = i - current;
@@ -233,26 +268,32 @@ function renderCarousel() {
 
     const card = document.createElement("div");
     card.className = `service-card ${isActive ? "active" : "side"}`;
-    card.innerHTML = `
-        <div class="card-bg"></div>
-        <div class="card-shape">${s.shape}</div>
-        <div class="card-content">
-          <div class="card-tag"></div>
-          <div class="card-title">${s.title}</div>
-          <div class="card-desc">${s.short}</div>
-          <button class="card-btn">Explore Solution</button>
-        </div>
-      `;
+   card.innerHTML = `
 
-    card.addEventListener("click", () => {
-      if (isActive) {
-        openModal(idx);
-      } else {
-        current = idx;
-        renderCarousel();
-        renderDots();
-      }
-    });
+<img src="${s.image}" class="card-image">
+
+<div class="card-bg"></div>
+
+<div class="card-shape">${s.shape}</div>
+
+<div class="card-content">
+
+<div class="card-title">${s.title}</div>
+
+<div class="card-desc">${s.short}</div>
+
+<button class="card-btn">Explore Solution</button>
+
+</div>
+`
+
+
+
+   card.addEventListener("click", () => {
+
+  openModal(idx)
+
+});
 
     track.appendChild(card);
   });
@@ -285,16 +326,40 @@ function openModal(idx) {
   const s = services[idx];
   document.getElementById("modalTag").textContent = s.tag;
   document.getElementById("modalTitle").textContent = s.title;
+  document.getElementById("modalShape").innerHTML = s.shape
   document.getElementById("modalDesc").textContent = s.desc;
   const ul = document.getElementById("modalFeatures");
   ul.innerHTML = s.features.map((f) => `<li>${f}</li>`).join("");
-  document.getElementById("modalOverlay").classList.add("open");
+const overlay = document.getElementById("modalOverlay")
+const box = document.getElementById("modalBox")
+
+overlay.classList.add("open")
+
+gsap.fromTo(
+  box,
+  {scale:0.8, opacity:0, y:60},
+  {scale:1, opacity:1, y:0, duration:0.5, ease:"power3.out"}
+);
   document.body.style.overflow = "hidden";
 }
 
-function closeModal() {
-  document.getElementById("modalOverlay").classList.remove("open");
-  document.body.style.overflow = "";
+function closeModal(){
+
+const overlay = document.getElementById("modalOverlay")
+const box = document.getElementById("modalBox")
+
+gsap.to(box,{
+scale:0.8,
+opacity:0,
+y:40,
+duration:0.3,
+onComplete:()=>{
+overlay.classList.remove("open")
+}
+})
+
+document.body.style.overflow = "";
+
 }
 
 document.getElementById("modalClose").addEventListener("click", closeModal);
@@ -317,3 +382,20 @@ gsap.utils.toArray(".process-item").forEach((item) => {
     },
   });
 });
+
+// HAMBURGER MOBILE NAV
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileNav.classList.toggle('open');
+  document.body.style.overflow = 
+    mobileNav.classList.contains('open') ? 'hidden' : '';
+});
+
+function closeMobileNav() {
+  hamburger.classList.remove('open');
+  mobileNav.classList.remove('open');
+  document.body.style.overflow = '';
+}
