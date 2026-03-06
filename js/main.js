@@ -399,3 +399,24 @@ function closeMobileNav() {
   mobileNav.classList.remove('open');
   document.body.style.overflow = '';
 }
+
+// TOUCH SWIPE — mobile
+const cardsTrack = document.getElementById('cardsTrack');
+let touchStartX = 0;
+
+cardsTrack.addEventListener('touchstart', (e) => {
+  touchStartX = e.touches[0].clientX;
+});
+
+cardsTrack.addEventListener('touchend', (e) => {
+  const diff = touchStartX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      current = (current + 1) % total;
+    } else {
+      current = (current - 1 + total) % total;
+    }
+    renderCarousel();
+    renderDots();
+  }
+});

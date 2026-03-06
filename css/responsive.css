@@ -73,8 +73,9 @@
   .service-card.side   { display: none; }
   .service-card.active { width: 300px; height: 360px; }
 
-  .carousel-btn { width: 42px; height: 42px; font-size: 18px; }
-
+.carousel-btn {
+  display: none;
+}
   /* TRUST */
   .trust-grid {
     grid-template-columns: 1fr;
