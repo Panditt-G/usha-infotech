@@ -67,57 +67,13 @@ gsap.to(".glow-3", {
   },
 });
 
-// how er work animation
 
-gsap.fromTo(
-  ".process-line",
-  { scaleX: 0 },
-  {
-    scaleX: 1,
-    ease: "none",
-    duration: 1.5,
-    transformOrigin: "left center",
-    scrollTrigger: {
-      trigger: ".process-section",
-      start: "top 40%",
-      end: "bottom 100%",
-      scrub: true
-    }
-  }
-);
 
-// gsap.from(".process-item", {
-//   y:40,
-//   opacity:0,
-//   stagger:0.3,
-//   duration:1,
-//   ease:"power2.out",
-//   scrollTrigger:{
-//     trigger:".process-section",
-//     start:"top 80%"
-//   }
-// })
 
-const tl = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".process-section",
-    start: "top 130%",
-    end: "bottom 60%",
-    scrub: 1,
-  },
-});
 
-tl.to(".process-line::after", {
-  scaleX: 1,
-  duration: 1,
-});
 
-tl.from(".process-item", {
-  y: 40,
-  opacity: 0.6,
-  stagger: 0.3,
-  duration: 1,
-});
+
+
 
 // testimonial animation
 
@@ -132,3 +88,59 @@ gsap.from(".testimonial-card", {
   },
 });
 
+
+
+// ── HORIZONTAL LINE SCROLL ANIMATION ──────────────────
+(function () {
+  const section = document.getElementById('process-flow');
+  if (!section) return;
+
+  const fill  = section.querySelector('.process-line-fill');
+  const items = section.querySelectorAll('.process-item');
+  const icons = section.querySelectorAll('.process-icon');
+
+  if (!fill) return;
+
+  // Initial hidden state for items
+  items.forEach(item => {
+    item.style.opacity    = '0';
+    item.style.transform  = 'translateY(20px)';
+    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  });
+
+  function onScroll() {
+    const rect = section.getBoundingClientRect();
+    const wh   = window.innerHeight;
+
+    const start    = wh * 0.6;
+    const end      = wh * -0.2;
+    const progress = Math.min(1, Math.max(0,
+      (start - rect.top) / (start - end)
+    ));
+
+    if (window.innerWidth <= 900) {
+      const grid = section.querySelector('.process-grid');
+      if (grid) grid.style.setProperty('--line-progress', (progress * 100) + '%');
+      fill.style.width = (progress * 100) + '%';
+    } else {
+      fill.style.width = (progress * 100) + '%';
+    }
+
+    icons.forEach((icon, i) => {
+      const threshold = (i + 1) / (icons.length + 1);
+      if (progress >= threshold) {
+        icon.classList.add('active');
+      }
+    });
+
+    items.forEach(item => {
+      if (item.getBoundingClientRect().top < wh * 0.88) {
+        item.style.opacity   = '1';
+        item.style.transform = 'translateY(0)';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();

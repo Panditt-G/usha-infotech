@@ -373,15 +373,7 @@ renderDots();
 
 ScrollTrigger.refresh();
 
-gsap.utils.toArray(".process-item").forEach((item) => {
-  ScrollTrigger.create({
-    trigger: item,
-    start: "top 75%",
-    onEnter: () => {
-      item.querySelector(".process-icon").classList.add("active");
-    },
-  });
-});
+
 
 // HAMBURGER MOBILE NAV
 const hamburger = document.getElementById('hamburger');
