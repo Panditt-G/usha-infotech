@@ -265,7 +265,7 @@ function renderCarousel() {
     card.className = `service-card ${isActive ? "active" : "side"}`;
    card.innerHTML = `
 
-<img src="${s.image}" class="card-image">
+    <img src="${s.image}" class="card-image">
 
 <div class="card-bg"></div>
 
@@ -275,7 +275,6 @@ function renderCarousel() {
 
 <div class="card-title">${s.title}</div>
 
-<div class="card-desc">${s.short}</div>
 
 <button class="card-btn">Explore Solution</button>
 
