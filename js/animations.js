@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const heroHeading = document.querySelector(".hero-heading");
 
-const words = heroHeading.querySelectorAll("br, span, text");
 
 gsap.from(".hero-heading", {
   y: 80,
@@ -144,3 +143,11 @@ gsap.from(".testimonial-card", {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 })();
+
+
+gsap.from(".hero-buttons a", {
+  y: 30,
+  opacity: 0,
+  delay: 0.7,
+  stagger: 0.2,
+});

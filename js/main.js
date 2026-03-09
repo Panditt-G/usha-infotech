@@ -14,11 +14,6 @@ gsap.ticker.add((time) => {
 
 gsap.ticker.lagSmoothing(0);
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-requestAnimationFrame(raf);
 
 // -----------------------------
 // NAVBAR SCROLL EFFECT
@@ -371,6 +366,14 @@ document.getElementById("modalOverlay").addEventListener("click", (e) => {
 renderCarousel();
 renderDots();
 
+// cta call
+document.querySelector(".modal-cta").addEventListener("click", () => {
+  window.location.href = "tel:+918087051208";
+});
+
+document.querySelector(".modal-secondary").addEventListener("click", () => {
+  window.open("https://wa.me/918087051208", "_blank");
+});
 ScrollTrigger.refresh();
 
 
@@ -411,4 +414,26 @@ cardsTrack.addEventListener('touchend', (e) => {
     renderCarousel();
     renderDots();
   }
+});
+
+
+// READ MORE TOGGLE
+function toggleReadMore(btn) {
+  const p = btn.closest('.testimonial-text');
+  const short = p.querySelector('.t-short');
+  const full  = p.querySelector('.t-full');
+  const isExpanded = full.style.display !== 'none';
+  if (isExpanded) {
+    full.style.display  = 'none';
+    short.style.display = '-webkit-box';
+    btn.textContent     = 'Read More ↓';
+  } else {
+    short.style.display = 'none';
+    full.style.display  = 'inline';
+    btn.textContent     = 'Read Less ↑';
+  }
+}
+
+document.getElementById("navCallBtn").addEventListener("click", () => {
+  window.location.href = "tel:+918087051208";
 });
